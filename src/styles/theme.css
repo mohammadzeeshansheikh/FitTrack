@@ -1,0 +1,204 @@
+/* FITTRACK Theme Variables & Global Color Definitions */
+
+:root {
+  /* Brand Accents */
+  --ft-primary: #ff5722;
+  --ft-primary-hover: #e64a19;
+  --ft-primary-rgb: 255, 87, 34;
+  --ft-secondary: #00bcd4;
+  --ft-secondary-hover: #0097a7;
+  --ft-accent: #ff9800;
+  --ft-success: #10b981;
+  --ft-warning: #f59e0b;
+  --ft-danger: #ef4444;
+  --ft-info: #3b82f6;
+
+  /* Light Mode Defaults */
+  --ft-bg-main: #f8fafcc2;
+  --ft-bg-surface: #f8fafcc2;
+  --ft-bg-surface-alt: #f8fafcc2;
+  --ft-bg-card: #f8fafcc2;
+  --ft-bg-sidebar: #f8fafcc2;
+  --ft-bg-navbar: #00f3ff;
+  --ft-text-primary: #00f3ff;
+  --ft-text-secondary: #64748b;
+  --ft-text-muted: #94a3b8;
+  --ft-border-color: #00f3ff;
+  --ft-border-subtle: #00f3ff;
+  --ft-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --ft-shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  --ft-shadow-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+  --ft-table-hover: #00f3ff;
+  --ft-table-stripe: #f8fafc;
+  --ft-badge-bg: #f8fafcc2;
+}
+
+[data-theme="dark"],
+[data-bs-theme="dark"] {
+  --ft-bg-main: #0b0f19;
+  --ft-bg-surface: #131b2e;
+  --ft-bg-surface-alt: #1a233a;
+  --ft-bg-card: #131b2e;
+  --ft-bg-sidebar: #0f172a;
+  --ft-bg-navbar: #0f172a;
+  --ft-text-primary: #000000;
+  --ft-text-secondary: #94a3b8;
+  --ft-text-muted: #64748b;
+  --ft-border-color: #243049;
+  --ft-border-subtle: #1a233a;
+  --ft-shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+  --ft-shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --ft-shadow-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --ft-table-hover: rgba(255, 255, 255, 0.03);
+  --ft-table-stripe: rgba(255, 255, 255, 0.015);
+  --ft-badge-bg: #1e293b;
+}
+
+/* Bootstrap Overrides according to CSS Variables */
+body {
+  background-color: var(--ft-bg-main) !important;
+  color: var(--ft-text-primary) !important;
+  font-family:
+    "Plus Jakarta Sans",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+  min-height: 100vh;
+}
+
+.card {
+  background-color: var(--ft-bg-card) !important;
+  border-color: var(--ft-border-color) !important;
+  color: var(--ft-text-primary) !important;
+  box-shadow: var(--ft-shadow-sm);
+  border-radius: 0.85rem;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: var(--ft-shadow-md);
+}
+
+.navbar {
+  background-color: var(--ft-bg-navbar) !important;
+  border-bottom: 1px solid var(--ft-border-color);
+  backdrop-filter: blur(12px);
+}
+
+.modal-content {
+  background-color: var(--ft-bg-surface) !important;
+  border-color: var(--ft-border-color) !important;
+  color: var(--ft-text-primary) !important;
+  border-radius: 1rem;
+}
+
+.modal-header,
+.modal-footer {
+  border-color: var(--ft-border-color) !important;
+}
+
+.form-control,
+.form-select {
+  background-color: var(--ft-bg-surface) !important;
+  border-color: var(--ft-border-color) !important;
+  color: var(--ft-text-primary) !important;
+  border-radius: 0.6rem;
+  padding: 0.65rem 0.95rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--ft-primary) !important;
+  box-shadow: 0 0 0 0.25rem rgba(var(--ft-primary-rgb), 0.2) !important;
+}
+
+.form-control::placeholder {
+  color: var(--ft-text-muted);
+}
+
+.table {
+  color: var(--ft-text-primary) !important;
+  border-color: var(--ft-border-color) !important;
+  margin-bottom: 0;
+}
+
+.table th {
+  background-color: var(--ft-bg-surface-alt) !important;
+  color: var(--ft-text-secondary) !important;
+  font-weight: 600;
+  font-size: 0.825rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--ft-border-color) !important;
+  padding: 0.85rem 1rem;
+}
+
+.table td {
+  padding: 0.95rem 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--ft-border-color) !important;
+}
+
+.table-hover tbody tr:hover td {
+  background-color: var(--ft-table-hover) !important;
+}
+
+/* Custom Button Styles */
+.btn-primary-ft {
+  background-color: var(--ft-primary) !important;
+  border-color: var(--ft-primary) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  border-radius: 0.6rem;
+  padding: 0.55rem 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.btn-primary-ft:hover {
+  background-color: var(--ft-primary-hover) !important;
+  border-color: var(--ft-primary-hover) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(var(--ft-primary-rgb), 0.35);
+}
+
+.btn-outline-ft {
+  background-color: transparent !important;
+  border-color: var(--ft-border-color) !important;
+  color: var(--ft-text-primary) !important;
+  border-radius: 0.6rem;
+  font-weight: 500;
+}
+
+.btn-outline-ft:hover {
+  background-color: var(--ft-bg-surface-alt) !important;
+  border-color: var(--ft-primary) !important;
+  color: var(--ft-primary) !important;
+}
+
+.text-muted-custom {
+  color: var(--ft-text-secondary) !important;
+}
+
+.border-custom {
+  border-color: var(--ft-border-color) !important;
+}
+
+.bg-surface-custom {
+  background-color: var(--ft-bg-surface) !important;
+}
+
+.bg-surface-alt-custom {
+  background-color: var(--ft-bg-surface-alt) !important;
+}
